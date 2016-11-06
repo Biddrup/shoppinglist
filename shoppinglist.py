@@ -2,10 +2,10 @@
 def printshoppinglist(shopdic):
     print('Shopping List'.center(35, '='))
     for k, v in shopdic.items():
-        print(k.ljust(20, '.') + 'TK. ' + str(v))
+        print(k.ljust(20, '.') + '$' + str(v))
         total = 0
         total = total + int(v)
-        print('Total cost = ' + str(total))
+        print('Total cost = $' + str(total))
 
 
 shoppinglist = {}
@@ -29,6 +29,7 @@ while True:
     if newname in shoppinglist:
         #If the input in databse, this will print
         print('Budget for ' + newname + ' is TK. ' + shoppinglist[newname])
+
     else:
         print('I do not have the information for ' + newname)
         #This will take info under that name
@@ -37,4 +38,5 @@ while True:
         shoppinglist[newname] = items
         #And, databse is updated now
         print('Shoppinglist database updated')
+
 printshoppinglist(shoppinglist)
